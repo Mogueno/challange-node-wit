@@ -6,4 +6,4 @@ const serverConfigSchema = new mongoose.Schema({
   saveLogsTime: Number,
 });
 
-module.exports = mongoose.model("Calculator", serverConfigSchema);
+module.exports = mongoose.model("ServerConfig", serverConfigSchema);

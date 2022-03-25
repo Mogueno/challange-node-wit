@@ -2,13 +2,12 @@ const express = require("express");
 const nodeUuid = require("node-uuid");
 const add = require("./middleware/add");
 const createCalcEntry = require("./database/createCalcEntry");
-const logs = require("./middleware/logs");
+const performanceMiddleware = require("./middleware/performanceMiddleware");
 const getOperationByUniqueID = require("./database/getOperationByUniqueID");
 
 const app = express();
 const port = 4000;
-
-app.use(logs);
+app.use(performanceMiddleware);
 
 app.post("/add", (req, res) => {
   var uuid = nodeUuid.v4();

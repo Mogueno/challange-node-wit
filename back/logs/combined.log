@@ -1,0 +1,88 @@
+{"level":"info","message":"Operation: {\n  _id: new ObjectId(\"623e0f6d6846ed5a4a4fd8fe\"),\n  uniqueId: '49fe384e-ccd5-4e1e-a5c7-bc2956172ae3',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 19.459394"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"UniqueID: undefined"}
+{"level":"info","message":"Operation: {\n  _id: new ObjectId(\"623e0f6d6846ed5a4a4fd8fe\"),\n  uniqueId: '49fe384e-ccd5-4e1e-a5c7-bc2956172ae3',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 3.611185"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"UniqueID: undefined"}
+{"level":"info","message":"Operation: {\n  _id: new ObjectId(\"623e0f6d6846ed5a4a4fd8fe\"),\n  uniqueId: '49fe384e-ccd5-4e1e-a5c7-bc2956172ae3',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 17.250805"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"UniqueID: undefined"}
+{"level":"info","message":"Operation: {\n  _id: new ObjectId(\"623e0f6d6846ed5a4a4fd8fe\"),\n  uniqueId: '49fe384e-ccd5-4e1e-a5c7-bc2956172ae3',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 4.341254"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"UniqueID: undefined"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 4.852464"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: cc7672db-3c42-47f9-b2c3-ffbf0f64d1d8"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: 'cc7672db-3c42-47f9-b2c3-ffbf0f64d1d8',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e2ff35b9aab11e16dfe63\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 1.08383"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 1b82118d-d409-4c96-84e2-cd201ec02cd5"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: '1b82118d-d409-4c96-84e2-cd201ec02cd5',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e30035b9aab11e16dfe65\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.608837"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 4020f0bc-60d2-4095-90fa-6adaf809eacc"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: '4020f0bc-60d2-4095-90fa-6adaf809eacc',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e302ae781350c545dcd55\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.314326"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: b3ed3556-7718-44fb-9800-46bed83de9ac"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: 'b3ed3556-7718-44fb-9800-46bed83de9ac',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e306b8fb42b8b1d25ab77\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.667695"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 9c902b0f-6c79-41a0-b09f-5f708e5e5990"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: '9c902b0f-6c79-41a0-b09f-5f708e5e5990',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e30950085e17389642d4f\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.32097"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: e0508d02-cc2f-4cd4-939c-23c8b363c283"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: 'e0508d02-cc2f-4cd4-939c-23c8b363c283',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e3413edda4684b9ee0e29\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.618165"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 8600f04f-7445-48f5-b9a5-90032e10396a"}
+{"level":"info","message":"getdata from server -- null"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: '8600f04f-7445-48f5-b9a5-90032e10396a',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e369051d50ab43ba6a8a4\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.403393"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 4664a832-a0a9-4355-8217-bcce7417c233"}
+{"level":"info","message":"getdata from server -- {\n  _id: new ObjectId(\"623e36af760fae24f5c87332\"),\n  shouldLogQueries: true,\n  shouldSaveLogs: false,\n  saveLogsTime: 12\n}"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: '4664a832-a0a9-4355-8217-bcce7417c233',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e36f7a725a11c61cd6dac\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.691461"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 5060071a-49ac-4f5b-8a04-0e31c51c0158"}
+{"level":"info","message":"getdata from server -- {\n  _id: new ObjectId(\"623e36af760fae24f5c87332\"),\n  shouldLogQueries: true,\n  shouldSaveLogs: false,\n  saveLogsTime: 12\n}"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: '5060071a-49ac-4f5b-8a04-0e31c51c0158',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e3711d03fd246ce5cf490\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.725251"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: c0cac3c8-e7ec-4cb8-b00c-0958f05b341b"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 10.239581"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 85ec838c-c86e-42ac-8ae7-2e8dadedb5d3"}
+{"level":"info","message":"getdata from server -- true"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: '85ec838c-c86e-42ac-8ae7-2e8dadedb5d3',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e3752b3971652183c56cd\"),\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 10.096285"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: b8bdb754-afad-4a35-86f2-b201ca3fda27"}
+{"level":"info","message":"b8bdb754-afad-4a35-86f2-b201ca3fda27 1 4 add 5"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 9.061929"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 14307d22-25be-496f-972e-624a5399c23b"}
+{"level":"info","message":"SAVED -- {\n  uniqueId: '14307d22-25be-496f-972e-624a5399c23b',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  _id: new ObjectId(\"623e37ac99085ab727009a7c\"),\n  __v: 0\n}"}

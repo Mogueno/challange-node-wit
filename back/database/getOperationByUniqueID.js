@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Calculator = require("../CalculatorSchema");
+const Calculator = require("./schemas/CalculatorSchema");
 
 mongoose.connect("mongodb://localhost:27017/test");
 

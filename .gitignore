@@ -3,6 +3,7 @@
 # dependencies
 back/node_modules
 front/node_modules
+back/logs
 /.pnp
 .pnp.js
 

@@ -1,6 +1,7 @@
 const express = require("express");
 const nodeUuid = require("node-uuid");
 const add = require("./middleware/calculator/add");
+const logsToCSV = require("./util/logsToCSV");
 const createCalcEntry = require("./database/query/createCalcEntry");
 const performanceMiddleware = require("./middleware/core/performanceMiddleware");
 const getOperationByUniqueID = require("./database/query/getOperationByUniqueID");
@@ -46,6 +47,15 @@ app.post("/server-config", (req, res) => {
   } catch (error) {
     res.send(error, 500);
   }
+});
+
+app.post("/logs-to-csv", (req, res) => {
+  var uuid = nodeUuid.v4();
+  res.set({
+    "unique-id": uuid,
+  });
+  logsToCSV();
+  res.send("logs saved to csv", 200);
 });
 
 app.get("/get-operation", (req, res) => {

@@ -2,7 +2,7 @@
   "name": "back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
@@ -11,12 +11,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.8.2",
     "express": "^4.17.3",
     "fast-csv": "^4.3.6",
     "mongodb": "4.4",
     "mongoose": "^6.2.8",
     "node-uuid": "^1.4.8",
     "nodemon": "^2.0.15",
-    "winston": "^3.6.0"
+    "winston": "^3.6.0",
+    "winston-csv-format": "^2.0.3"
   }
 }

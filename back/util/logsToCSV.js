@@ -1,7 +1,7 @@
 const { writeToPath } = require("@fast-csv/format");
-const logger = require("../util/logWinston");
+const logger = require("./logWinston");
 
-module.exports = function saveToCSV(data) {
+module.exports = function logsToCSV(data) {
   const path = `${__dirname}/logs.csv`;
   //  example data:
   //  const data = [

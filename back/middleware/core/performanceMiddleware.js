@@ -1,4 +1,4 @@
-const logger = require("../util/logWinston");
+const logger = require("../../util/logWinston");
 
 module.exports = function performanceMiddleware(req, res, next) {
   const start = process.hrtime();

@@ -1,6 +1,9 @@
 const express = require("express");
 const nodeUuid = require("node-uuid");
 const add = require("./middleware/calculator/add");
+const divide = require("./middleware/calculator/divide");
+const subtract = require("./middleware/calculator/subtract");
+const multiply = require("./middleware/calculator/multiply");
 const logsToCSV = require("./util/logsToCSV");
 const createCalcEntry = require("./database/query/createCalcEntry");
 const performanceMiddleware = require("./middleware/core/performanceMiddleware");
@@ -34,6 +37,55 @@ app.post("/add", (req, res) => {
 
   res.json({ result: result });
 });
+
+app.post("/divide", (req, res) => {
+  var uuid = nodeUuid.v4();
+  res.set({
+    "unique-id": uuid,
+  });
+
+  var number1 = parseInt(req.query.number1);
+  var number2 = parseInt(req.query.number2);
+
+  var result = divide(number1, number2);
+
+  createCalcEntry(number1, number2, "divide", result, uuid);
+
+  res.json({ result: result });
+});
+
+app.post("/subtract", (req, res) => {
+  var uuid = nodeUuid.v4();
+  res.set({
+    "unique-id": uuid,
+  });
+
+  var number1 = parseInt(req.query.number1);
+  var number2 = parseInt(req.query.number2);
+
+  var result = subtract(number1, number2);
+
+  createCalcEntry(number1, number2, "subtract", result, uuid);
+
+  res.json({ result: result });
+});
+
+app.post("/multiply", (req, res) => {
+  var uuid = nodeUuid.v4();
+  res.set({
+    "unique-id": uuid,
+  });
+
+  var number1 = parseInt(req.query.number1);
+  var number2 = parseInt(req.query.number2);
+
+  var result = multiply(number1, number2);
+
+  createCalcEntry(number1, number2, "multiply", result, uuid);
+
+  res.json({ result: result });
+});
+
 
 app.post("/server-config", (req, res) => {
   var uuid = nodeUuid.v4();

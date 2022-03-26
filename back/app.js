@@ -6,6 +6,7 @@ const createCalcEntry = require("./database/query/createCalcEntry");
 const performanceMiddleware = require("./middleware/core/performanceMiddleware");
 const getOperationByUniqueID = require("./database/query/getOperationByUniqueID");
 const logger = require("./util/logWinston");
+const bodyParser = require("body-parser");
 
 //Global Variables --
 global.shouldLogQueries = false;
@@ -16,6 +17,7 @@ global.saveLogsTime = 5;
 const app = express();
 const port = 4000;
 app.use(performanceMiddleware);
+app.use(bodyParser.json());
 
 app.post("/add", (req, res) => {
   var uuid = nodeUuid.v4();
@@ -41,6 +43,7 @@ app.post("/server-config", (req, res) => {
 
   var serverConfig = req.body;
   try {
+    console.log("serverConfig: ", serverConfig);
     global.shouldLogQueries = serverConfig.shouldLogQueries;
     global.shouldSaveLogs = serverConfig.shouldSaveLogs;
     global.saveLogsTime = serverConfig.saveLogsTime;
@@ -56,8 +59,12 @@ app.post("/logs-to-csv", (req, res) => {
   res.set({
     "unique-id": uuid,
   });
-  logsToCSV();
-  res.send("logs saved to csv", 200);
+  if (global.shouldSaveLogs) {
+    logsToCSV();
+    res.send("logs saved to csv", 200);
+  } else {
+    res.send("configure server to save logs", 500);
+  }
 });
 
 app.get("/get-operation", (req, res) => {

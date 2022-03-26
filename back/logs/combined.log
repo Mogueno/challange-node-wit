@@ -68,3 +68,65 @@
 {"level":"info","message":"UniqueID: 44d5379a-e5e2-4c5e-aad1-deb99596fece"}
 {"level":"info","message":"Done writing."}
 {"level":"info","message":"Example app listening on port 4000"}
+{"level":"info","message":"Example app listening on port 4000"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 4.128978"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 500"}
+{"level":"info","message":"UniqueID: 891855d4-bdfd-413a-a29f-451d42a85a62"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 1.017495"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 500"}
+{"level":"info","message":"UniqueID: d92c02fb-c872-4db8-bf2f-5b832d82a114"}
+{"level":"info","message":"Example app listening on port 4000"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 4.914606"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 500"}
+{"level":"info","message":"UniqueID: ed8445e1-8013-470f-961d-adc7a083dd66"}
+{"level":"info","message":"Example app listening on port 4000"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 12.465168"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 318cf90f-00dd-4fbe-9dea-c503599218ef"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 1.308355"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"UniqueID: 12d34dbf-7466-4bbc-8b77-607001dfedb3"}
+{"level":"info","message":"Done writing."}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 11.952412"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"UniqueID: undefined"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 2.715638"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"UniqueID: undefined"}
+{"level":"info","message":"Example app listening on port 4000"}
+{"level":"info","message":"Example app listening on port 4000"}
+{"level":"info","message":"Example app listening on port 4000"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 15.191424"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"Unique ID: 8b190b4c-0361-488e-963c-d53de3ea9faa"}
+{"level":"info","message":"Example app listening on port 4000"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 14.543371"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"Unique ID: 8b190b4c-0361-488e-963c-d53de3ea9faa"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 3.542143"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"Unique ID: 8b190b4c-0361-488e-963c-d53de3ea9faa"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 10.386455"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"Unique ID: 4c619d40-0bf9-4aef-9237-e20dd4594fc8"}
+{"level":"info","message":"GET Query -- {\n  _id: new ObjectId(\"623e0f6d6846ed5a4a4fd8fe\"),\n  uniqueId: '49fe384e-ccd5-4e1e-a5c7-bc2956172ae3',\n  number1: 1,\n  number2: 4,\n  operation: 'add',\n  result: 5,\n  __v: 0\n}"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 3.702621"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 304"}
+{"level":"info","message":"Unique ID: 8b190b4c-0361-488e-963c-d53de3ea9faa"}
+{"level":"info","message":"[FINISH] Execution time (hr): 0 0.950708"}
+{"level":"info","message":"IP: ::1"}
+{"level":"info","message":"Status Code: 200"}
+{"level":"info","message":"Unique ID: cba28b02-1084-4441-9968-e85107fb7af2"}
+{"level":"info","message":"Done writing."}

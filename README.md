@@ -4,8 +4,11 @@ Calculator challage for WIT Node.js role
 ## How to Run
 
 Acesse a pasta `./back` e `./front` com terminais diferentes. 
+
 Inicie o servico do MongoDB local ( min ver >= 4)
+
 rode `yarn start` em ambos os diretorios. 
+
 Navegue até `localhost:3000`. :tada:
 
 ---

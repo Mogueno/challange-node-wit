@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Calculator = require("../schema/CalculatorSchema");
-const ServerConfig = require("../schema/ServerConfigSchema");
 const logger = require("../../util/logWinston");
 
 mongoose.connect("mongodb://localhost:27017/test");

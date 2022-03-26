@@ -5,6 +5,8 @@ const logsToCSV = require("./util/logsToCSV");
 const createCalcEntry = require("./database/query/createCalcEntry");
 const performanceMiddleware = require("./middleware/core/performanceMiddleware");
 const getOperationByUniqueID = require("./database/query/getOperationByUniqueID");
+const logger = require("./util/logWinston");
+
 //Global Variables --
 global.shouldLogQueries = false;
 global.shouldSaveLogs = false;
@@ -68,5 +70,5 @@ app.get("/get-operation", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  logger.info(`Example app listening on port ${port}`);
 });

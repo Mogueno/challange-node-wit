@@ -93,6 +93,18 @@ EXPECTED RESULT:
     result: a - b ,
 ```
 
+### Logs to CSV
+Creates the CSV file inside the `./logs` directory, from the input `./logs/combined.log`.
+
+PATH: `/logs-to-csv`
+METHOD: POST
+
+EXPECTED RESULT STATUS CODE: 200
+EXPECTED RESULT: 
+```
+logs saved to csv
+```
+
 ### Server Configs
 Updates the config on the server.
 

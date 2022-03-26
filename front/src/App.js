@@ -60,6 +60,7 @@ function App() {
           <input
             type="number"
             onChange={(e) => setNumber1(e.target.value)}
+            maxlength="4"
             value={number1}
           ></input>
         </div>
@@ -68,6 +69,7 @@ function App() {
           <input
             type="number"
             onChange={(e) => setNumber2(e.target.value)}
+            maxlength="4"
             value={number2}
           ></input>
         </div>

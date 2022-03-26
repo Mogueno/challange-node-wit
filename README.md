@@ -8,6 +8,115 @@ Inicie o servico do MongoDB local ( min ver >= 4)
 rode `yarn start` em ambos os diretorios. 
 Navegue até `localhost:3000`. :tada:
 
+---
+
+## Routes
+
+### Add
+Returns the sum of 2 given numbers.
+
+PATH: `/add?number1=a&number2=b`
+METHOD: POST
+
+EXPECTED RESULT STATUS CODE: 200
+EXPECTED RESULT: 
+``` uniqueId: uuid,
+    number1: a,
+    number2: b,
+    operation: "add",
+    result: a + b ,
+```
+
+### Divide
+Returns the division of 2 given numbers.
+
+PATH: `/divide?number1=a&number2=b`
+METHOD: POST
+
+EXPECTED RESULT STATUS CODE: 200
+EXPECTED RESULT: 
+``` uniqueId: uuid,
+    number1: a,
+    number2: b,
+    operation: "divide",
+    result: a / b ,
+```
+
+### Multiply
+Returns the multiplication of 2 given numbers.
+
+
+PATH: `/multiply?number1=a&number2=b`
+METHOD: POST
+
+EXPECTED RESULT STATUS CODE: 200
+EXPECTED RESULT: 
+``` uniqueId: uuid,
+    number1: a,
+    number2: b,
+    operation: "multiply",
+    result: a * b ,
+```
+
+### Subtract
+Returns the subtraction of 2 given numbers.
+
+
+PATH: `/subtract?number1=a&number2=b`
+METHOD: POST
+
+EXPECTED RESULT STATUS CODE: 200
+EXPECTED RESULT: 
+``` uniqueId: uuid,
+    number1: a,
+    number2: b,
+    operation: "subtract",
+    result: a - b ,
+```
+
+### Get Operation
+Get the call that matches the given uniqueID.
+
+
+PATH: `/get-operation?uniqueID=someuniqueID`
+METHOD: GET
+
+EXPECTED RESULT STATUS CODE: 200
+EXPECTED RESULT: 
+``` uniqueId: uuid,
+    number1: a,
+    number2: b,
+    operation: "subtract",
+    result: a - b ,
+```
+
+### Server Configs
+Updates the config on the server.
+
+shouldLogQueries - Tells the server to log the queries done to the MongoDB.
+
+shouldSaveLogs - Tells the server to save the logs on a CSV file.
+
+saveLogsTime - Set the time in seconds that the server will save the logs to the CSV file.
+
+PATH: `/server-config?uniqueID=someuniqueID`
+METHOD: POST
+BODY: 
+```
+{
+    "shouldLogQueries": Boolean,
+    "shouldSaveLogs": Boolean,
+    "saveLogsTime": Number
+}
+```
+EXPECTED RESULT STATUS CODE: 200
+EXPECTED RESULT: 
+```
+server configs updated
+```
+
+---
+
 ## Este challenge tem como objectivo a avaliação do conhecimento em Node.js developers candidatos à WIT.
 
 

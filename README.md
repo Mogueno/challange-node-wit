@@ -1,5 +1,5 @@
 # challenge-node-wit
-Calculator challage for WIT Node.js role
+Calculator challenge for WIT Node.js role
 
 ## How to Run
 

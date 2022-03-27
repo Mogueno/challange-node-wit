@@ -12,6 +12,16 @@ async function postData(url = "", data = {}) {
   return response.json();
 }
 
+async function getData(url = "", data = {}) {
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return response.json();
+}
+
 function App() {
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
@@ -20,23 +30,40 @@ function App() {
   const [shouldSaveQueries, setShouldSaveQueries] = useState(false);
 
   const [message, setMessage] = useState("");
+  const [serverMessage, setServerMessage] = useState("");
+  const [fadeProp, setFadeProp] = useState("fade-in");
 
   useEffect(() => {
-    postData("/add?server-configs").then((data) => {
-      setShouldSaveQueries(data.shouldLogQueries);
-      setShouldSaveLogsToCSV(data.shouldSaveLogs);
-      setSaveLogsToCSVTime(data.saveLogsTime);
+    getData("/server-config").then((data) => {
+      setShouldSaveQueries(data?.data?.shouldLogQueries);
+      setShouldSaveLogsToCSV(data?.data?.shouldSaveLogs);
+      setSaveLogsToCSVTime(data?.data?.saveLogsTime);
     });
   }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (fadeProp === "fade-in") {
+        setFadeProp("fade-out");
+      }
+    }, 2000);
+    return () => clearInterval(timeout);
+  }, [fadeProp]);
+
   const handleSaveConfigs = () => {
-    //TODO: show response on saved server configs
-    postData("/server-configs", {
+    const data = {
       saveLogsTime: saveLogsToCSVTime,
-      shouldSaveLogs: shouldSaveLogsToCSV,
       shouldLogQueries: shouldSaveQueries,
-    }).then((data) => {
-      console.log("saved configs: ", data);
-    });
+      shouldSaveLogs: shouldSaveLogsToCSV,
+    };
+    postData("/server-config", data)
+      .catch((err) => {
+        err && setServerMessage(err);
+      })
+      .then((data) => {
+        data && setServerMessage(data);
+      });
+    setFadeProp("fade-in");
   };
   const handleSumClick = () => {
     postData(`/add?number1=${number1}&number2=${number2}`).then((data) => {
@@ -47,25 +74,25 @@ function App() {
     if (number2 === 0 || number1 === 0) {
       setMessage({ result: "Cannot divide by zero" });
     } else {
-      postData(`/divide?number1=${number1}&number2=${number2}`).then((data) => {
-        setMessage(data);
-      });
+      postData(`/divide?number1=${number1}&number2=${number2}`, {}).then(
+        (data) => {
+          setMessage(data);
+        }
+      );
     }
   };
   const handleMulClick = () => {
-    postData(`/multiply?number1=${number1}&number2=${number2}`).then((data) => {
-      setMessage(data);
-    });
+    postData(`/multiply?number1=${number1}&number2=${number2}`, {}).then(
+      (data) => {
+        setMessage(data);
+      }
+    );
   };
   const handleSubClick = () => {
     postData(`/subtract?number1=${number1}&number2=${number2}`).then((data) => {
       setMessage(data);
     });
   };
-
-  useEffect(() => {
-    console.log("message: ", message);
-  }, [message]);
 
   return (
     <div className="App">
@@ -76,7 +103,7 @@ function App() {
           <input
             type="number"
             onChange={(e) => setNumber1(e.target.value)}
-            maxlength="4"
+            maxLength="4"
             value={number1}
           ></input>
         </div>
@@ -85,7 +112,7 @@ function App() {
           <input
             type="number"
             onChange={(e) => setNumber2(e.target.value)}
-            maxlength="4"
+            maxLength="4"
             value={number2}
           ></input>
         </div>
@@ -115,51 +142,62 @@ function App() {
             {" "}
             <input
               type="checkbox"
-              class="toggle-switch-checkbox"
+              className="toggle-switch-checkbox"
               name="toggleSwitch"
               id="toggleSwitch"
-              onChange={() => setShouldSaveLogsToCSV()}
+              checked={shouldSaveQueries}
+              onChange={() => setShouldSaveQueries(!shouldSaveQueries)}
             />
-            <label class="toggle-switch-label" for="toggleSwitch">
+            <label className="toggle-switch-label" htmlFor="toggleSwitch">
               Save mongoDB queries
             </label>
           </div>
           <div className="toggle">
             <input
               type="checkbox"
-              class="toggle-switch-checkbox"
+              checked={shouldSaveLogsToCSV}
+              className="toggle-switch-checkbox"
               name="toggleSwitch"
               id="toggleSwitch"
-              onChange={() => setShouldSaveQueries(!shouldSaveQueries)}
+              onChange={() => setShouldSaveLogsToCSV(!shouldSaveLogsToCSV)}
             />
-            <label class="toggle-switch-label" for="toggleSwitch">
+            <label className="toggle-switch-label" htmlFor="toggleSwitch">
               Save logs to CSV
             </label>
           </div>
           {shouldSaveLogsToCSV && (
             <div className="toggle">
-              <label class="toggle-switch-label" for="toggleSwitch">
+              <label className="toggle-switch-label" htmlFor="toggleSwitch">
                 Save logs to CSV time:
               </label>
               <input
                 type="number"
-                class="toggle-switch-checkbox"
+                className="toggle-switch-checkbox"
                 name="toggleSwitch"
                 id="toggleSwitch"
+                min={0}
                 value={saveLogsToCSVTime}
-                onChange={(e) => setSaveLogsToCSVTime(e.target.value)}
+                onChange={(e) => setSaveLogsToCSVTime(parseInt(e.target.value))}
               />
             </div>
           )}
           <div className="toggle">
             <button
-              class="save-configs-button"
+              className="save-configs-button"
               name="save-configs-button"
               id="save-configs-button"
               onClick={handleSaveConfigs}
             >
               Save configs
             </button>
+          </div>
+        </div>
+
+        <div className="server-response">
+          <div className="server-response-block">
+            {serverMessage !== "" && (
+              <label className={fadeProp}> {serverMessage.data} </label>
+            )}
           </div>
         </div>
       </div>

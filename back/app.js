@@ -13,7 +13,7 @@ const bodyParser = require("body-parser");
 
 //Global Variables --
 global.shouldLogQueries = false;
-global.shouldSaveLogs = false;
+global.shouldSaveLogs = true;
 global.saveLogsTime = 5;
 // end Global Variables
 
@@ -86,24 +86,37 @@ app.post("/multiply", (req, res) => {
   res.json({ result: result });
 });
 
-
 app.post("/server-config", (req, res) => {
   var uuid = nodeUuid.v4();
   res.set({
     "unique-id": uuid,
   });
-
   var serverConfig = req.body;
   try {
     console.log("serverConfig: ", serverConfig);
-    global.shouldLogQueries = serverConfig.shouldLogQueries;
-    global.shouldSaveLogs = serverConfig.shouldSaveLogs;
-    global.saveLogsTime = serverConfig.saveLogsTime;
+    global.shouldLogQueries = serverConfig?.shouldLogQueries;
+    global.shouldSaveLogs = serverConfig?.shouldSaveLogs;
+    global.saveLogsTime = serverConfig?.saveLogsTime;
 
-    res.send("server configs updated", 200);
+    res.status(200).json({ data: "server configs updated" });
   } catch (error) {
-    res.send(error, 500);
+    res.status(500).json({ error: error });
   }
+});
+
+app.get("/server-config", (req, res) => {
+  var uuid = nodeUuid.v4();
+  res.set({
+    "unique-id": uuid,
+  });
+
+  res.status(200).json({
+    data: {
+      shouldLogQueries: global.shouldLogQueries,
+      shouldSaveLogs: global.shouldSaveLogs,
+      saveLogsTime: global.saveLogsTime,
+    },
+  });
 });
 
 app.post("/logs-to-csv", (req, res) => {
@@ -113,9 +126,9 @@ app.post("/logs-to-csv", (req, res) => {
   });
   if (global.shouldSaveLogs) {
     logsToCSV();
-    res.send("logs saved to csv", 200);
+    res.status(200).json({ data: "logs saved to csv" });
   } else {
-    res.send("configure server to save logs", 500);
+    res.status(500).send({ data: "configure server to save logs" });
   }
 });
 

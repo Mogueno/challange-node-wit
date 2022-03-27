@@ -70,6 +70,7 @@
 .toggle-containers {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content:flex-end;
   width: 100%;
   height: 100%;
@@ -94,4 +95,36 @@
 
 .toggle-switch-label{
   color: white;
+}
+label.fade-in {
+  transition: opacity 1s ease;
+}
+label.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.server-response label{
+  color: white;
+}
+.server-response-block{
+  min-height: 50px;
+  display: block;
+}
+.save-configs-button{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #334755;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+.toggle{
+  margin:5px;
+  display: flex;
+  width: 100%;
+  min-width: 100vh;
 }

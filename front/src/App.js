@@ -15,13 +15,29 @@ async function postData(url = "", data = {}) {
 function App() {
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
+  const [saveLogsToCSVTime, setSaveLogsToCSVTime] = useState(1);
+  const [shouldSaveLogsToCSV, setShouldSaveLogsToCSV] = useState(false);
+  const [shouldSaveQueries, setShouldSaveQueries] = useState(false);
+
   const [message, setMessage] = useState("");
 
-  // useEffect(() => {
-  //   postData("/add?number1=1&number2=4").then((data) => {
-  //     setMessage(data.result);
-  //   });
-  // }, []);
+  useEffect(() => {
+    postData("/add?server-configs").then((data) => {
+      setShouldSaveQueries(data.shouldLogQueries);
+      setShouldSaveLogsToCSV(data.shouldSaveLogs);
+      setSaveLogsToCSVTime(data.saveLogsTime);
+    });
+  }, []);
+  const handleSaveConfigs = () => {
+    //TODO: show response on saved server configs
+    postData("/server-configs", {
+      saveLogsTime: saveLogsToCSVTime,
+      shouldSaveLogs: shouldSaveLogsToCSV,
+      shouldLogQueries: shouldSaveQueries,
+    }).then((data) => {
+      console.log("saved configs: ", data);
+    });
+  };
   const handleSumClick = () => {
     postData(`/add?number1=${number1}&number2=${number2}`).then((data) => {
       setMessage(data);
@@ -88,11 +104,65 @@ function App() {
           <button onClick={handleMulClick}>*</button>
         </div>
       </div>
-      {message !== "" && (
-        <div className="result-container">
-          <label> {message.result} </label>
+
+      <div className="result-container">
+        {message !== "" && <label> {message.result} </label>}
+      </div>
+
+      <div className="toggle-containers">
+        <div className="toggle-container">
+          <div className="toggle">
+            {" "}
+            <input
+              type="checkbox"
+              class="toggle-switch-checkbox"
+              name="toggleSwitch"
+              id="toggleSwitch"
+              onChange={() => setShouldSaveLogsToCSV()}
+            />
+            <label class="toggle-switch-label" for="toggleSwitch">
+              Save mongoDB queries
+            </label>
+          </div>
+          <div className="toggle">
+            <input
+              type="checkbox"
+              class="toggle-switch-checkbox"
+              name="toggleSwitch"
+              id="toggleSwitch"
+              onChange={() => setShouldSaveQueries(!shouldSaveQueries)}
+            />
+            <label class="toggle-switch-label" for="toggleSwitch">
+              Save logs to CSV
+            </label>
+          </div>
+          {shouldSaveLogsToCSV && (
+            <div className="toggle">
+              <label class="toggle-switch-label" for="toggleSwitch">
+                Save logs to CSV time:
+              </label>
+              <input
+                type="number"
+                class="toggle-switch-checkbox"
+                name="toggleSwitch"
+                id="toggleSwitch"
+                value={saveLogsToCSVTime}
+                onChange={(e) => setSaveLogsToCSVTime(e.target.value)}
+              />
+            </div>
+          )}
+          <div className="toggle">
+            <button
+              class="save-configs-button"
+              name="save-configs-button"
+              id="save-configs-button"
+              onClick={handleSaveConfigs}
+            >
+              Save configs
+            </button>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

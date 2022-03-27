@@ -19,6 +19,7 @@
     "mongoose": "^6.2.8",
     "node-uuid": "^1.4.8",
     "nodemon": "^2.0.15",
+    "toad-scheduler": "^1.6.0",
     "winston": "^3.6.0",
     "winston-csv-format": "^2.0.3"
   }

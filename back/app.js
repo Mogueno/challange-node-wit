@@ -10,15 +10,22 @@ const performanceMiddleware = require("./middleware/core/performanceMiddleware")
 const getOperationByUniqueID = require("./database/query/getOperationByUniqueID");
 const logger = require("./util/logWinston");
 const bodyParser = require("body-parser");
+const startScheduler = require("./util/startScheduler");
+const { ToadScheduler } = require("toad-scheduler");
 
 //Global Variables --
 global.shouldLogQueries = false;
-global.shouldSaveLogs = true;
-global.saveLogsTime = 5;
+global.shouldSaveLogs = false;
+global.saveLogsTime = 3;
 // end Global Variables
 
 const app = express();
 const port = 4000;
+
+//Start Scheduler when server is started
+const logsToCSVScheduler = new ToadScheduler();
+startScheduler(logsToCSVScheduler);
+
 app.use(performanceMiddleware);
 app.use(bodyParser.json());
 
@@ -93,11 +100,12 @@ app.post("/server-config", (req, res) => {
   });
   var serverConfig = req.body;
   try {
-    console.log("serverConfig: ", serverConfig);
     global.shouldLogQueries = serverConfig?.shouldLogQueries;
     global.shouldSaveLogs = serverConfig?.shouldSaveLogs;
     global.saveLogsTime = serverConfig?.saveLogsTime;
 
+    //Start LogsToCSV Scheduler
+    startScheduler(logsToCSVScheduler);
     res.status(200).json({ data: "server configs updated" });
   } catch (error) {
     res.status(500).json({ error: error });

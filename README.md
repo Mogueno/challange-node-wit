@@ -1,7 +1,7 @@
 # challenge-node-wit
-Calculator challenge for WIT Node.js role
+Desafio projeto calculadora em Node.js
 
-## How to Run
+## Como rodar localmente
 
 Acesse a pasta `./back` e `./front` com terminais diferentes. 
 
@@ -16,13 +16,13 @@ Navegue até `localhost:3000`. :tada:
 ## Routes
 
 ### Add
-Returns the sum of 2 given numbers.
+Retorna a soma de 2 numeros.
 
-PATH: `/add?number1=a&number2=b`
-METHOD: POST
+Caminho: `/add?number1=a&number2=b`
+Método: POST
 
-EXPECTED RESULT STATUS CODE: 200
-EXPECTED RESULT: 
+Status code esperado: 200
+Body esperado: 
 ``` uniqueId: uuid,
     number1: a,
     number2: b,
@@ -31,13 +31,13 @@ EXPECTED RESULT:
 ```
 
 ### Divide
-Returns the division of 2 given numbers.
+Retorna a divisão de dois numeros.
 
-PATH: `/divide?number1=a&number2=b`
-METHOD: POST
+Caminho: `/divide?number1=a&number2=b`
+Método: POST
 
-EXPECTED RESULT STATUS CODE: 200
-EXPECTED RESULT: 
+Status code esperado: 200
+Body esperado: 
 ``` uniqueId: uuid,
     number1: a,
     number2: b,
@@ -46,14 +46,14 @@ EXPECTED RESULT:
 ```
 
 ### Multiply
-Returns the multiplication of 2 given numbers.
+Retorna a multiplicação de dois numeros.
 
 
-PATH: `/multiply?number1=a&number2=b`
-METHOD: POST
+Caminho: `/multiply?number1=a&number2=b`
+Método: POST
 
-EXPECTED RESULT STATUS CODE: 200
-EXPECTED RESULT: 
+Status code esperado: 200
+Resultado esperado: 
 ``` uniqueId: uuid,
     number1: a,
     number2: b,
@@ -62,14 +62,13 @@ EXPECTED RESULT:
 ```
 
 ### Subtract
-Returns the subtraction of 2 given numbers.
+Retorna a subtração de dois números.
 
+Caminho: `/subtract?number1=a&number2=b`
+Método: POST
 
-PATH: `/subtract?number1=a&number2=b`
-METHOD: POST
-
-EXPECTED RESULT STATUS CODE: 200
-EXPECTED RESULT: 
+Status code esperado: 200
+Body esperado: 
 ``` uniqueId: uuid,
     number1: a,
     number2: b,
@@ -78,14 +77,14 @@ EXPECTED RESULT:
 ```
 
 ### Get Operation
-Get the call that matches the given uniqueID.
+Retorna qual operação aconteceu, dado um uniqueID.
 
 
-PATH: `/get-operation?uniqueID=someuniqueID`
-METHOD: GET
+Caminho: `/get-operation?uniqueID=someuniqueID`
+Método: GET
 
-EXPECTED RESULT STATUS CODE: 200
-EXPECTED RESULT: 
+Status code esperado: 200
+Body esperado: 
 ``` uniqueId: uuid,
     number1: a,
     number2: b,
@@ -94,29 +93,29 @@ EXPECTED RESULT:
 ```
 
 ### Logs to CSV
-Creates the CSV file inside the `./logs` directory, from the input `./logs/combined.log`.
+Cria o arquivo CSV dentro do diretório `./logs`, desde os logs do arquivo `./logs/combined.log`.
 
-PATH: `/logs-to-csv`
-METHOD: POST
+Caminho: `/logs-to-csv`
+Método: POST
 
-EXPECTED RESULT STATUS CODE: 200
-EXPECTED RESULT: 
+Status code esperado: 200
+Resultado esperado: 
 ```
 logs saved to csv
 ```
 
 ### Server Configs
-Updates the config on the server.
+Atualiza as configurações dentro do servidor.
 
-shouldLogQueries - Tells the server to log the queries done to the MongoDB.
+shouldLogQueries - Flag que indica se o servidor deveria ou não logar as queries feitas no MongoDB.
 
-shouldSaveLogs - Tells the server to save the logs on a CSV file.
+shouldSaveLogs - Flag que indica se o servidor deve ou não salvar os logs em CSV.
 
-saveLogsTime - Set the time in seconds that the server will save the logs to the CSV file.
+saveLogsTime - Intervalo em segundos que o servidor vai salvar os logs em CSV.
 
-PATH: `/server-config?uniqueID=someuniqueID`
-METHOD: POST
-BODY: 
+Caminho: `/server-config`
+Médodo: POST
+Body: 
 ```
 {
     "shouldLogQueries": Boolean,
@@ -124,8 +123,8 @@ BODY:
     "saveLogsTime": Number
 }
 ```
-EXPECTED RESULT STATUS CODE: 200
-EXPECTED RESULT: 
+Status code esperado: 200
+Body esperado: 
 ```
 server configs updated
 ```

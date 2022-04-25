@@ -1,4 +1,4 @@
-# challenge-node-wit
+# challenge-node
 Desafio projeto calculadora em Node.js
 
 ## Como rodar localmente
@@ -131,7 +131,7 @@ server configs updated
 
 ---
 
-## Este challenge tem como objectivo a avaliação do conhecimento em Node.js developers candidatos à WIT.
+## Este challenge tem como objectivo a avaliação do conhecimento em Node.js.
 
 
 Descrição:
@@ -162,16 +162,3 @@ não) o log das queries efetuadas;
 
 • Se as configurações do servidor forem alteradas, o servidor deve conseguir assumi-las sem necessitar de
 restart;
-
-
-## BONUS:
-Desenvolver em typescript;
-Testes unitários;
-Métricas de Avaliação:
-
-
-Os parâmetros de avaliação para este challenge, sem ordem de importância específica, são:
-• Qualidade e estruturação do código;
-• UX construída;
-• Desempenho da solução desenvolvida;
-• Capacidade de cumprir deadlines.
